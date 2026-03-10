@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# StockTrack Frontend
+Frontend interface for **StockTrack**, an inventroy management system designed to track products, stock levels, and basic inventory data.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application provides a clean user interface for interacting with the **StockTrack Inventory API**, allowing users to add and view products in real time.
 
-## Available Scripts
+The frontend is built with **React and Tailwind CSS** and communicates with the backend through REST API requests.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Overview
+The StockTrack frontend allows users to interact with the inventory system through a simple web interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The application connects to the **StockTrack backend API** to retrieve and create product records. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The system demonstrates full-stack integration by combining a React user interface with a Spring Booot REST API.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
+- View a list of products from the backend API
+- Add new products to the inventory
+- Display product details including:
+    - name
+    - description
+    - quantity
+    - price
+- Real-time UI updates after creating products
+- Clean responsive layout using Tailwind CSS
+- Integration with a Spring Boot REST backend
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technology Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Language
+JavaScript
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Framework
+React
 
-### `npm run eject`
+### Styling
+Tailwind CSS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### API Communication
+Fetch API
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Build Tool
+Node.js/npm
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Architecture Overview
+The frontend follows a simple component-based React structure:
 
-## Learn More
+```
+App
+ ├── ProductForm
+ └── ProductList
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **App** manages application state and API communication
+- **ProductForm** handles product creation
+- **ProductList** displays inventroy data returned from the API
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application communicates with the backend using HTTP requests to the StockTrack API.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Backend API Connection
+This frontend connects to the **[StockTrack Backend API](https://github.com/DannonGibby/StockTrack-backend)**.
 
-### Analyzing the Bundle Size
+Example API endpoint used:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+GET /api/products
+POST /api/products
+```
 
-### Making a Progressive Web App
+The frontend retrieves existing products on load and sends new product data to the backend when a product is created. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Setup & Run Locally
+Clone the repository:
+```
+git clone https://github.com/DannonGibby/StockTrack-frontend.git
+cd stocktrack-frontend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Install dependencies:
+```
+npm install
+```
 
-### Deployment
+Start the development server:
+```
+npm start
+```
+The application will run on http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Related Projects
+**[StockTrack Backend](https://github.com/DannonGibby/StockTrack-backend)**
 
-### `npm run build` fails to minify
+## Author
+### Dannon Gibby
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
